@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "2456ecd9-7248-474d-822e-dd1405567964",
+		"name": "Prueba Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12019312"
+	},
+	"item": [
+		{
+			"name": "Listar Bodegas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bodegas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bodegas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Bodega",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\" : \"BODEGA 4\",\r\n    \"id_responsable\" : \"1\",\r\n    \"estado\": \"1\", \r\n    \"created_by\" : \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/addBodegas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addBodegas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\" : \"CAM_XS\",\r\n    \"descripcion\" : \"CAMISETA TALLA XS\",\r\n    \"estado\": \"1\", \r\n    \"created_by\" : \"1\", \r\n     \"id_bodega\": \"3\",\r\n     \"cantidad\" : \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/addProductos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addProductos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Inventario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_bodega\" : \"2\",\r\n    \"id_producto\" : \"2\",    \r\n    \"cantidad\" : \"4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/addInventario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addInventario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trasladar Producto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_bodega_origen\" : \"1\",\r\n    \"id_bodega_destino\" : \"3\",\r\n    \"cantidad\" : 10,\r\n    \"created_by\" : \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/trasladarProducto/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trasladarProducto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
